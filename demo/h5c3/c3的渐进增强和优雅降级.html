@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box1{
+            margin: 30px auto;
+            width: 500px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: red;
+            /*渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后在针对高级浏览器进行追加功能*/
+            -webkit-border-radius:10%;
+            -moz-border-radius: 10%;
+            border-radius: 10%;
+        }
+        .box2{
+            margin: 50px auto;
+            width: 500px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: blue;
+            /*优雅降级：一开始针对高级浏览器构建完整的功能，然后再针对低版本浏览器进行兼容*/
+            border-radius: 50% ;
+            -moz-border-radius: 50%;
+            -webkit-border-radius:50%;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box1">渐进增强</div>
+<div class="box2">优雅降级</div>
+</body>
+</html>

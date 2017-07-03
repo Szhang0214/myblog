@@ -1,0 +1,413 @@
+/*产品部分start*/
+.product {
+    background-color: #F2F2F2;
+    /*height: 570px;*/
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.product .pro-title {
+    height: 44px;
+    /*background-color: pink;*/
+}
+
+.product .pro-title a {
+    font: 14px/44px "microsoft yahei";
+    padding: 0 12px;
+}
+
+.product .pro-title em {
+    font: 16px/44px simsun;
+}
+
+.product .pro-title .first {
+    font: 700 16px/44px "microsoft yahei";
+}
+
+.product .pro-detail {
+    height: 525px;
+    background-color: #fff;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.pro-detail .pic {
+    width: 378px;
+    height: 525px;
+    /*background-color: coral;*/
+}
+
+.pic .pic-top {
+    width: 350px;
+    height: 350px;
+    margin: 13px auto;
+}
+
+.pic .pic-bottom {
+    margin-left: 36px;
+    position: relative;
+}
+
+.pic .pic-bottom .first {
+    border: 1px solid #E4393C;
+}
+
+.pic .pic-bottom a {
+    margin: 0 5px;
+}
+
+.pic .pic-bottom .left {
+    /*display: block;*/
+    width: 14px;
+    height: 25px;
+    background: url("../images/newicon20140910.png") -56px -361px no-repeat;
+    position: absolute;
+    left: -23px;
+    top: 15px;
+}
+
+.pic .pic-bottom .right {
+    /*display: block;*/
+    width: 14px;
+    height: 25px;
+    background: url("../images/newicon20140910.png") -70px -361px no-repeat;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+.num {
+    width: 303px;
+    height: 65px;
+    /*background-color: pink;*/
+    margin: 30px 0 0 34px;
+}
+
+.num .text {
+    position: relative;
+}
+
+.num p {
+    margin-left: 20px;
+    display: inline;
+}
+
+.num i {
+    position: absolute;
+}
+
+.num i.one {
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    background: url("../images/newicon20140910.png") -162px -296px no-repeat;
+    left: 4px;
+    top: 3px;
+}
+
+.num i.two {
+    width: 14px;
+    height: 12px;
+    background-color: orange;
+    background: url("../images/newicon20140910.png") -177px -296px no-repeat;
+    left: 50px;
+    top: 3px;
+}
+
+/*中间盒子部分start*/
+
+.pro-detail .list {
+    width: 588px;
+    height: 525px;
+    /*background-color: plum;*/
+}
+
+.list .top {
+    width: 588px;
+    height: 69px;
+
+}
+
+.top .top-title {
+    height: 36px;
+    padding: 19px 0 14px 0;
+}
+
+.top-title p {
+    color: #E3393C;
+}
+
+.top .duibi {
+    width: 54px;
+    height: 22px;
+    border: 1px solid #DDDDDD;
+    background-color: #F5F5F5;
+    line-height: 22px;
+    margin-top: 20px;
+}
+
+.list .price {
+    width: 566px;
+    height: 115px;
+    background-color: #F7F7F7;
+    padding: 18px 10px 0 12px;
+}
+
+.list .price .jdj-r span {
+    color: #005AA0;
+}
+
+.jdj {
+    height: 44px;
+}
+
+.jdj-l span {
+    font: 700 16px "simsun";
+    color: #E4393C;
+}
+
+.jdj-r {
+    border-left: 1px solid #E6E6E6;
+    padding-left: 11px;
+}
+
+.cx {
+    height: 25px;
+}
+
+.cx img {
+    width: 25px;
+    height: 25px;
+}
+
+span.one {
+    background-color: #E4393C;
+    color: #fff;
+    padding: 4px 3px 2px 2px;
+    margin-right: 8px;
+}
+
+span.two {
+    color: #E4393C;
+}
+
+.jjg {
+    padding-left: 60px;
+    margin-top: 15px;
+}
+
+.list .add {
+    width: 576px;
+    height: 54px;
+    /*background-color: greenyellow;*/
+    border-bottom: 1px dotted #F7F7F7;
+    padding: 16px 0 13px 12px;
+}
+
+.list .add .add-b {
+    margin-top: 17px;
+}
+
+.list .service {
+    width: 576px;
+    height: 242px;
+    /*background-color: yellow;*/
+    padding-left: 12px;
+    padding-top: 15px;
+}
+
+.service ul li {
+    height: 28px;
+    float: left;
+    text-align: center;
+    line-height: 28px;
+}
+
+.service ul li select {
+    width: 129px;
+    height: 28px;
+    margin-right: 7px;
+}
+
+.tel .one {
+    width: 180px;
+    height: 60px;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    margin: 20px 0 0 22px;
+    padding: 10px;
+}
+
+.xztz {
+    margin-top: 14px;
+    /*position: relative;*/
+}
+
+.xztz li {
+    margin-right: 8px;
+}
+
+.xztz .xz {
+    margin: 0;
+}
+
+.xztz li.one {
+    width: 29px;
+    height: 24px;
+    border: 2px solid #E4393C;
+
+}
+
+.xztz li.two, .xztz li.three {
+    width: 55px;
+    height: 26px;
+}
+
+.xztz li.two {
+    border: 1px solid #CCCCCC;
+}
+
+.xztz li.three {
+    border: 1px dotted #CCCCCC;
+}
+
+.btfq li {
+    border: 1px solid #CCCCCC;
+    padding: 9px 7px 6px 6px;
+    margin-right: 8px;
+    margin-top: 14px;
+}
+
+.btfq .fq {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gwc {
+    height: 103px;
+    margin-top: 25px;
+    /*margin-bottom: 15px;*/
+}
+
+.gwc .one {
+    width: 33px;
+    height: 34px;
+    border: 1px solid #ccc;
+    padding-right: 15px;
+    margin-right: 10px;
+}
+
+.gwc .two {
+    width: 135px;
+    height: 36px;
+    background-color: #E4393C;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+/*中间盒子部分end*/
+.pro-detail .tel {
+    width: 244px;
+    height: 525px;
+    /*background-color: pink;*/
+}
+
+.tel .two {
+    width: 200px;
+    /*height: 52px;*/
+    /*background-color: yellowgreen;*/
+    margin-left: 22px;
+    margin-top: 16px;
+}
+
+.tel .two .qjd {
+    color: #005AA0;
+    margin: 0 34px 0 9px;
+}
+
+.tel .two .jdzy {
+    background-color: #E4393C;
+    color: #fff;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.three ul {
+    margin-top: 18px;
+    margin-left: 25px;
+
+}
+
+.three li {
+    width: 72px;
+    height: 28px;
+    float: left;
+    border: 1px solid #ccc;
+    margin: 0 7px 12px 0;
+    text-align: center;
+    line-height: 28px;
+    background-color: #F9F9F9;
+    padding-left: 18px;
+    position: relative;
+}
+
+.three li i.one {
+    /*display: block;*/
+    width: 1px;
+    height: 1px;
+    background-color: red;
+    background: url("../images/sprite-score.png") 0 0 no-repeat;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+}
+
+.three li i.two {
+    /*display: block;*/
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    background: url("../images/sprite-score.png") -130px 0 no-repeat;
+    position: absolute;
+    left: -12px;
+    top: -12px;
+}
+
+.three li i.three {
+    /*display: block;*/
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    background: url("../images/sprite-score.png") -103px 0 no-repeat;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.three li i.four {
+    /*display: block;*/
+    width: 18px;
+    height: 18px;
+    background-color: red;
+    background: url("../images/sprite-score.png") -77px 0 no-repeat;
+    position: absolute;
+    left: -30px;
+    top: -15px;
+}
+
+.four {
+    margin: 20px 0 0 40px;
+}
+
+.four ul {
+    margin-top: 10px;
+}
+
+.four li {
+    color: #005AA0;
+    margin-right: 50px;
+}
+
+/*产品部分end*/

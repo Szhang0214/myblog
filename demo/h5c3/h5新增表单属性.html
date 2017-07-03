@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        form {
+            width: 100%;
+            /*最大宽度*/
+            max-width: 640px;
+            /*最小宽度*/
+            min-width: 320px;
+            margin: 0 auto;
+            font-family: 'microsoft yahei';
+        }
+
+        input {
+            /*input标签为行内块元素，既可以设置宽高，也可以在一行显示*/
+            display: block;
+            width: 100%;
+            height: 25px;
+            margin: 5px 0 15px 0;
+        }
+
+    </style>
+</head>
+<body>
+<form action="#">
+    <fieldset>
+        <!-- legend 为fieldset定义标题-->
+        <legend>H5新增表单属性</legend>
+        <!-- label 标签的增加是为了增加语义，方便浏览器的解析，为残障盲人提供方便-->
+        <label>
+            <!-- name 属性是在表单提交的时候方便后台读取该条数据的来源-->
+            用户名：<input type="text" name="username" autofocus placeholder="例如：张姗"/>
+        </label>
+        <label for="email">
+            <!-- label 标签里面的for属性和input里面的id属性是搭配使用的，给两个属性设置相同的值，当鼠标点击email时，光标会自动跳转到对应id值得input标签上-->
+            email: <input type="email" id="email" autocomplete="on"/>
+        </label>
+        <label>
+            <!-- 获得光标的另一种方式是直接省略label标签的for属性和input标签的id属性-->
+            tel: <input type="tel" name="tel"/>
+        </label>
+        <label>
+            number: <input type="number" name="num"/>
+        </label>
+        <label>
+            url: <input type="url" name="url"/>
+        </label>
+        <label>
+            search: <input type="search" name="sec"/>
+        </label>
+        <label>
+            color: <input type="color" name="col"/>
+        </label>
+        <label>
+            <!-- range 滑动条-->
+            range: <input type="range" name="range"/>
+        </label>
+        <label>
+            date: <input type="date" name="date"/>
+        </label>
+        <label>
+            datetime: <input type="datetime" name="dtime"/>
+        </label>
+        <label>
+            month: <input type="month" name="month"/>
+        </label>
+
+        <input type="text" list="list"/>
+        <!-- datalist 必须配合input标签才可以使用，在input标签输入信息时起到智能提示的作用-->
+        <datalist id="list">
+            <option>山东</option>
+            <option>山西</option>
+            <option>山上</option>
+            <option>凉山南</option>
+            <option>闪闪</option>
+        </datalist>
+
+        <input type="submit" value="提交"/>
+
+    </fieldset>
+    <!-- 智能下拉列表-->
+
+
+</form>
+</body>
+</html>

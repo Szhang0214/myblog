@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        header,section,nav,footer{
+            width: 1000px;
+            margin: 10px auto;
+            border: 1px solid #000;
+        }
+        header{
+            height: 50px;
+            background-color: pink;
+        }
+        nav{
+            height: 30px;
+            background-color: yellow;
+        }
+        /*自盒子浮动后不占位置，如果不设置父盒子的高度，会导致下面的元素跑上来*/
+        section{
+            height: 600px;
+        }
+        /*高度不会继承，要单独设置子盒子的高度*/
+        aside{
+            float: left;
+            width: 400px;
+            height: 600px;
+            background-color: red;
+        }
+        article{
+            float: right;
+            width: 590px;
+            height: 600px;
+            background-color: blue;
+            margin-left: 10px;
+        }
+        footer{
+            height: 50px;
+            background-color: orange;fl
+        }
+    </style>
+</head>
+<body>
+<header>头部</header>
+<nav>导航条</nav>
+<section>
+    <aside>侧边栏</aside>
+    <article>文章</article>
+</section>
+<footer>底部</footer>
+</body>
+</html>

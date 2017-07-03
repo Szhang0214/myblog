@@ -1,0 +1,336 @@
+/*导航部分start*/
+.nav {
+    height: 44px;
+    /*background-color: pink;*/
+    border-bottom: 2px solid #B1191A;
+}
+
+.nav .categories {
+    width: 210px;
+    height: 44px;
+    background-color: #B1191A;
+    position: relative;
+    z-index: 1;
+}
+
+.nav .categories .cate-dt a {
+    display: block;
+    width: 200px;
+    height: 44px;
+    font: 400 16px/44px "microsoft yahei";
+    color: #fff;
+    padding-left: 10px;
+}
+
+.nav .categories .cate-dd {
+    width: 209px;
+    height: 466px;
+    background-color: #C81623;
+    border-left: 1px solid #B1191A;
+    margin-top: 1px;
+}
+
+.cate-item {
+    height: 31px;
+    position: relative;
+}
+
+.cate-item:hover {
+    background-color: #fff;
+}
+
+.cate-item a {
+    font: 400 14px/31px "microsoft yahei";
+    color: #fff;
+    margin-left: 10px;
+}
+
+.cate-item:hover a {
+    color: #C81623;
+}
+
+.cate-item i {
+    font: 400 9px/31px "consolas";
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.nav .navitems {
+    width: 750px;
+    height: 44px;
+    /*background-color: yellow;*/
+    overflow: hidden;
+}
+
+.navitems li {
+    float: left;
+}
+
+.navitems a {
+    display: block;
+    font: 400 15px/44px "microsoft yahei";
+    padding: 0 20px;
+}
+
+.nav .treasure {
+    width: 140px;
+    height: 44px;
+    /*background-color: orange;*/
+}
+
+.nav .treasure a {
+    display: block;
+    width: 200px;
+    height: 54px;
+    background: url("../images/treasure2.jpg");
+    position: relative;
+    left: -110px;
+    top: -10px;
+}
+
+/*导航部分end*/
+/*活动部分start*/
+.bg-banner {
+    position: relative;
+}
+
+.bg-banner a {
+    width: 100%;
+    height: 644px;
+    background: url("../images/bg-banner.jpg") top center no-repeat;
+    position: absolute;
+}
+
+/*活动部分end*/
+/*主体部分start*/
+.main-bg {
+    /*width: 2318px;*/
+    /*height: 644px;*/
+    background: url("../images/bg-banner.jpg");
+    /*background-color: #000;*/
+}
+
+.main {
+    height: 500px;
+    /*background-color: pink;*/
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.slider {
+    width: 730px;
+    height: 454px;
+    background-color: #C81623;
+    margin-left: 220px;
+    margin-top: 12px;
+    float: left;
+    position: relative;
+}
+
+.circle {
+    /*width: 128px;*/
+    height: 18px;
+    /*background-color: pink;*/
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -66px;
+}
+
+.circle li {
+    float: left;
+    width: 18px;
+    height: 18px;
+    background-color: #3E3E3E;
+    margin: 0 2px;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 9px;
+    color: #fff;
+}
+
+.circle li.two {
+    background-color: #B61B1F;
+}
+
+.main-extra {
+    width: 250px;
+    height: 454px;
+    /*background-color: #B61B1F;*/
+    margin-top: 12px;
+    float: right;
+    position: relative;
+}
+
+.prom .arrow a,
+.slider .arrow a {
+    width: 28px;
+    height: 62px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    font: 400 22px/62px "simsun";
+    text-align: center;
+    color: #fff;
+}
+
+.arrow-l {
+    left: 0;
+}
+
+.arrow-r {
+    right: 0;
+}
+
+.main-extra {
+    width: 248px;
+    height: 453px;
+    /*background-color: skyblue;*/
+}
+
+.main-extra .news {
+    width: 248px;
+    height: 163px;
+    /*background-color: palegreen;*/
+    border: 1px solid #E4E4E4;
+}
+
+.news .mt {
+    border-bottom: 1px dotted #E8E8E7;
+    padding: 0 15px;
+    height: 32px;
+}
+
+.news .mt h2 {
+    font: 400 16px/32px "microsoft yahei";
+}
+
+.news .mt a {
+    font: 400 12px/32px "consolas";
+}
+
+.mc {
+    padding: 6px 0 0 15px;
+}
+
+.mc li {
+    line-height: 24px;
+}
+
+.mc span {
+    font-weight: 700;
+    margin-right: 4px;
+}
+
+.main-extra .lifeservice {
+    width: 248px;
+    height: 208px;
+    /*background-color: yellow;*/
+    border: 1px solid #E4E4E4;
+    border-top: none;
+    overflow: hidden;
+}
+
+.lifeservice ul {
+    width: 252px;
+
+}
+
+.lifeservice a {
+    display: block;
+    width: 62px;
+    height: 28px;
+    border-right: 1px solid #E8E8E7;
+    border-bottom: 1px solid #E8E8E7;
+    float: left;
+    text-align: center;
+    line-height: 28px;
+    padding-top: 42px;
+    position: relative;
+}
+
+.lifeservice i {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 18px;
+    top: 10px;
+    /*background-color: red;*/
+    background: url("../images/lifserv.png") 0 0 no-repeat;
+}
+
+.lifeservice .icon2 {
+    background: url("../images/lifserv.png") 0 -25px no-repeat;
+}
+
+.lifeservice .icon3 {
+    background: url("../images/lifserv.png") 0 -50px no-repeat;
+}
+
+.lifeservice .icon4 {
+    background: url("../images/lifserv.png") 0 -75px no-repeat;
+}
+
+.lifeservice .icon5 {
+    background: url("../images/lifserv.png") 0 -95px no-repeat;
+}
+
+.main-extra .right-pic {
+    margin-top: 5px;
+}
+
+/*主体部分end*/
+
+/*活动部分start*/
+.prom {
+    height: 151px;
+    /*background-color: pink;*/
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.prom .prom-r {
+    width: 1000px;
+    height: 164px;
+    /*background-color: skyblue;*/
+    overflow: hidden;
+    position: relative;
+}
+
+.prom .prom-r ul {
+    width: 6000px;
+}
+
+.prom .prom-r li {
+    float: left;
+    margin-right: 1px;
+}
+
+/*活动部分end*/
+/*产品部分start*/
+.product {
+    height: 273px;
+    /*background-color: pink;*/
+    margin-bottom: 20px;
+}
+
+.product-title {
+    line-height: 41px;
+    font: 400 18px/41px "microsoft yahei";
+    /*background-color: orangered;*/
+}
+
+.product-title span {
+    margin-left: 10px;
+    font: 400 16px/41px "simsun";
+}
+
+.product-list {
+    height: 231px;
+    border: 1px solid #E8E8E7;
+}
+
+/*产品部分end*/
