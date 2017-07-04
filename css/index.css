@@ -1,8 +1,16 @@
 body{
     font-family: "microsoft yahei";
-    min-height: 1050px;
-    background: url("../image/banner-1.jpg") no-repeat;
-    background-size: cover;
+}
+
+/*全屏video背景*/
+video{
+    height: 800px;
+    position:relative;
+}
+.title{
+    position: absolute;
+    left: 434px;
+    top: 0;
 }
 /*头部*/
 header{
@@ -194,7 +202,7 @@ h3{
     display: none;
 }
 .item:hover .content{
-    height: 230px;
+    height: 120px;
     /*border-color:#146eb4;*/
     background-size: contain;
     overflow: hidden;
@@ -240,7 +248,7 @@ h3{
 footer{
     position: absolute;
     left: 28%;
-    top: 1000px;
+    top: 780px;
     color: #ccc;
     font-size: 14px;
 }
