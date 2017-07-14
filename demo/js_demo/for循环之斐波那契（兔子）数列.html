@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //有个人想知道一年之内一对兔子能繁殖多少对。于是就筑了一道围墙把一对兔子关在里面。
+    //已知一对兔子每个月可以生一对小兔子，而一对兔子从出生后 第3个月起 每月生一对小兔子。
+    //假如一年内没有发生死亡现象，那么，一对兔子一年内（12个月）能繁殖成多少对？
+    //兔子数列规律为：1，1，2，3，5，8，13，21
+
+    //需求：一个数列当前项等于前两项之和。求第12项。(下面是两种方法)
+
+    var n1=1,n2=1,n3;
+    //从第3个月才开始生兔子，所以i的初始值为3
+    for(var i=3;i<=12;i++){
+        n3=n1+n2;
+        //前两项的值重新赋值
+        n1=n2;
+        n2=n3;
+    }
+    console.log(n3);
+
+    var n1=1,n2=1,temp;
+    for(var i=3;i<=12;i++){
+        //先把n1的值存放到temp
+        temp=n1;
+        //然后求前两项的和存到n1
+        n1=n1+n2;
+        //最后把temp放到n2里
+        n2=temp;
+    }
+
+    console.log(n1);
+</script>
+</body>
+</html>
