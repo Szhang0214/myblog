@@ -1,8 +1,13 @@
 body{
     font-family: "microsoft yahei";
 }
+/*fullpage全屏滑动设置*/
+#fullpage .section:not(first-child){
+    background: url("../image/section4.jpg");
+    background-size: cover;
+}
 
-/*全屏video背景*/
+/*第一屏开始 全屏video背景*/
 video{
     height: 800px;
     position:relative;
@@ -12,14 +17,15 @@ video{
     left: 434px;
     top: 0;
 }
+
 /*头部*/
 header{
-    /*margin-top: 30px;*/
     width: 350px;
     position: absolute;
     left: 35%;
     top: 45px;
 }
+
 /*标题特效*/
 .title div span{
     margin-top: 10px;
@@ -28,22 +34,17 @@ header{
     font-size: 45px;
     font-weight: 700;
     text-align: center;
-    /*margin-bottom: 20px;*/
 }
 .text-box {
     margin:35px;
     margin-left: 5px;
     text-align: center;
-    /*width: 500px;*/
-    /*line-height: 115px;*/
-    /*color: #065DAC;*/
 }
 
 .text-box span {
     display: inline-block;
     position: relative;
 }
-
 .text-box span::before,
 .text-box span::after {
     content: attr(data-text);
@@ -53,25 +54,22 @@ header{
     transition: all 1s;
     transform-origin: left center;
 }
-
 .text-box span::before {
     z-index: 3;
     color: #FFF;
     transform: rotateY(-15deg);
 }
-
 .text-box span::after {
     z-index: 2;
     color: rgba(0, 0, 0, 0.3);
 }
-
 .text-box:hover span::before {
     transform: rotateY(-40deg) skew(0deg, 5deg);
 }
-
 .text-box:hover span::after {
     transform: skew(0deg, 20deg);
 }
+
 /*标题特效结束*/
 .head{
     background: url(../image/b1.jpg) no-repeat;
@@ -79,6 +77,7 @@ header{
     min-height: 350px;
     text-align: center;
 }
+
 /*个人照片特效*/
 .box{
     width: 175px;
@@ -87,7 +86,6 @@ header{
     margin:60px auto;
     position: relative;
 }
-
 .box>div{
     width: 100%;
     height: 100%;
@@ -99,22 +97,14 @@ header{
     transition:all 2s;
     backface-visibility: hidden;
 }
-
-
 .box1{
     background:url(../image/shq.jpg) left 0 no-repeat;
     transform:rotateY(-180deg);
 }
-
-
-
 .box2{
     background:url(../image/zs1.jpg) right 0 no-repeat;
     background-size: cover;
-    /*left:300px;*/
 }
-
-
 .box:hover .box1{
     transform:rotateY(0deg);
 }
@@ -122,16 +112,9 @@ header{
 .box:hover .box2{
     transform:rotateY(180deg);
 }
-/*.head img{
-    margin-top: 50px;
-    width: 50%;
-    height: 50%;
-}*/
-
 .head h2{
     color: #fff;
     font-size: 27px;
-    /*margin-top: 20px;*/
 }
 .find{
     width: 350px;
@@ -139,7 +122,6 @@ header{
     /*不就是这里少写了px，哼*/
     line-height: 72px;
     text-align: center;
-    /*background-color: red;*/
 }
 .find .weixin,.qq,.email{
     width: 33.33%;
@@ -169,6 +151,7 @@ header{
 .find span:hover{
     cursor: pointer;
 }
+
 /*作品展示模块*/
 .items{
     width: 350px;
@@ -178,7 +161,6 @@ header{
     margin-bottom: 10px;
     box-sizing: border-box;
 }
-
 h3{
     width: 100%;
     height: 50px;
@@ -211,12 +193,6 @@ h3{
     display: block;
 }
 
-/*.lists h5{
-    color: #fff;
-    font-size: 20px;
-    padding: 10px;
-}*/
-
 .lists li{
     padding: 10px 20px;
     border-bottom: 1px solid #146eb4;
@@ -226,23 +202,6 @@ h3{
     color: #fff;
     font-size: 16px;
 }
-/*.content>li{
-    width: 100%;
-    height: 50px;
-    background-color: #fff;
-    margin-top: 8px;
-    line-height: 50px;
-    font-size: 20px;
-    color: #146eb4;
-    padding-left: 20px;
-}
-.menu ul{
-    display: none;
-}
-.lists{
-    width: 100%;
-    height: 300px;
-}*/
 
 /*底部版权*/
 footer{
@@ -251,6 +210,30 @@ footer{
     top: 780px;
     color: #ccc;
     font-size: 14px;
+}
+
+/*第二屏开始 导航条吸顶设置*/
+.nav{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    background-color: rgba(0,0,0,0.5);
+}
+.nav li{
+    margin:0 35px;
+}
+.nav a{
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 /*图标字体*/
@@ -262,7 +245,6 @@ footer{
     url('../font/font_hateos3om08p8pvi/iconfont.ttf') format('truetype'),
     url('../font/font_hateos3om08p8pvi/iconfont.svg#iconfont') format('svg');
 }
-
 .iconfont{
     font-family:"iconfont" !important;
     font-size:16px;font-style:normal;
