@@ -9,6 +9,8 @@
     <title>My Blog</title>
     <!--引入bootstrap-->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <!--引入fullpage样式-->
+    <link rel="stylesheet" href="css/jquery.fullPage.min.css">
     <!--引入自己的css-->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
@@ -19,80 +21,106 @@
     <!--[endif]-->
 </head>
 <body>
-<!--video全屏背景-->
-<video src="video/sea.mp4" autoplay loop></video>
-<!--标题-->
-<div class="title">
-    <div class="text-box">
-        <span data-text="My">My</span>
-        <span data-text="Personal">Personal</span>
-        <span data-text="Blog">Blog</span>
-    </div>
+<!--导航条-->
+<div class="nav" style="z-index:-1">
+    <ul class="clearfix">
+        <li class="fl"><a href="">张姗的Blog</a></li>
+        <li class="fr"><a href="">关于我</a></li>
+        <li class="fr"><a href="">作品集</a></li>
+        <li class="fr"><a href="">技能清单</a></li>
+        <li class="fr"><a href="">我的经历</a></li>
+        <li class="fr"><a href="">联系我</a></li>
+    </ul>
 </div>
-<!--头部-->
-<header>
-    <div class="login">
-        <div class="head">
-            <div class="box">
-                <div class="box1"></div>
-                <div class="box2"></div>
-            </div>
-            <h2>Zhang Shan</h2>
-        </div>
-    </div>
-    <!--联系方式模块-->
-    <div class="find clearfix">
-        <div class="weixin fl"><span class="iconfont">&#xe63b;</span><img src="image/erweima.jpg" alt=""></div>
-        <div class="qq fl"><span class="iconfont">&#xe617;</span></div>
-        <div class="email fl"><span class="iconfont">&#xe6bf;</span></div>
-    </div>
-    <!--作品展示模块-->
-    <div class="items">
-        <div class="item">
-            <h3>My Demos</h3>
-            <div class="content">
-                <ul class="lists">
-                    <li><a href="demo/h5c3/c3的渐进增强和优雅降级.html">c3的渐进增强和优雅降级</a></li>
-                    <li><a href="demo/h5c3/h5新增表单属性.html">h5新增表单属性</a></li>
-                    <li><a href="demo/h5c3/h5页面经典布局demo.html">h5页面经典布局demo</a></li>
-                    <li><a href="demo/h5c3/h5语义标签布局.html">h5语义标签布局</a></li>
-                    <li><a href="demo/h5c3/scale黑白格-demo.html">scale黑白格-demo</a></li>
-                    <li><a href="demo/h5c3/立方体-demo.html">立方体-demo</a></li>
-                    <li><a href="demo/h5c3/气泡-demo.html">气泡-demo</a></li>
-                    <li><a href="demo/h5c3/手风琴-demo.html">手风琴-demo</a></li>
-                    <li><a href="demo/h5c3/用animation制作幻灯片.html">用animation制作幻灯片</a></li>
-                </ul>
+<!--fullpage全屏滑动-->
+<div id="fullpage">
+    <div class="section first">
+        <!--video全屏背景-->
+        <video src="video/sea.mp4" autoplay loop></video>
+        <!--标题-->
+        <div class="title">
+            <div class="text-box">
+                <span data-text="My">My</span>
+                <span data-text="Personal">Personal</span>
+                <span data-text="Blog">Blog</span>
             </div>
         </div>
-        <div class="item">
-            <h3>My Items</h3>
-            <div class="content">
-                <ul class="lists">
-                    <li><a href="item/JD/index.html">pc端京东</a></li>
-                    <li><a href="item/JD/detail.html">pc端京东详情页</a></li>
-                    <li><a href="item/MJD/index.html">移动端京东</a></li>
-                    <li><a href="item/wjs项目/index.html">bootstrap_微金所</a></li>
-                    <li><a href="">占位占位占位</a></li>
-                    <li><a href="">占位占位占位</a></li>
-                    <li><a href="">占位占位占位</a></li>
-                </ul>
+        <!--头部-->
+        <header>
+            <div class="login">
+                <div class="head">
+                    <div class="box">
+                        <div class="box1"></div>
+                        <div class="box2"></div>
+                    </div>
+                    <h2>Zhang Shan</h2>
+                </div>
             </div>
-        </div>
-    </div>
+            <!--联系方式模块-->
+            <div class="find clearfix">
+                <div class="weixin fl"><span class="iconfont">&#xe63b;</span><img src="image/erweima.jpg" alt=""></div>
+                <div class="qq fl"><span class="iconfont">&#xe617;</span></div>
+                <div class="email fl"><span class="iconfont">&#xe6bf;</span></div>
+            </div>
+            <!--作品展示模块-->
+            <div class="items">
+                <div class="item">
+                    <h3>My Demos</h3>
+                    <div class="content">
+                        <ul class="lists">
+                            <li><a href="demo/h5c3/c3的渐进增强和优雅降级.html">c3的渐进增强和优雅降级</a></li>
+                            <li><a href="demo/h5c3/h5新增表单属性.html">h5新增表单属性</a></li>
+                            <li><a href="demo/h5c3/h5页面经典布局demo.html">h5页面经典布局demo</a></li>
+                            <li><a href="demo/h5c3/h5语义标签布局.html">h5语义标签布局</a></li>
+                            <li><a href="demo/h5c3/scale黑白格-demo.html">scale黑白格-demo</a></li>
+                            <li><a href="demo/h5c3/立方体-demo.html">立方体-demo</a></li>
+                            <li><a href="demo/h5c3/气泡-demo.html">气泡-demo</a></li>
+                            <li><a href="demo/h5c3/手风琴-demo.html">手风琴-demo</a></li>
+                            <li><a href="demo/h5c3/用animation制作幻灯片.html">用animation制作幻灯片</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <h3>My Items</h3>
+                    <div class="content">
+                        <ul class="lists">
+                            <li><a href="item/JD/index.html">pc端京东</a></li>
+                            <li><a href="item/JD/detail.html">pc端京东详情页</a></li>
+                            <li><a href="item/MJD/index.html">移动端京东</a></li>
+                            <li><a href="item/wjs项目/index.html">bootstrap_微金所</a></li>
+                            <li><a href="">占位占位占位</a></li>
+                            <li><a href="">占位占位占位</a></li>
+                            <li><a href="">占位占位占位</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-</header>
-<!--访问量统计-->
-<div class="visits"></div>
-<!--底部版权-->
-<footer>
-    <p>Copyright © 2017-2029 . 张姗的个人网站 . Zhang Shan's Personal Website , All Rights Reserved . </p>
-</footer>
+        </header>
+        <!--访问量统计-->
+        <div class="visits"></div>
+        <!--底部版权-->
+        <footer>
+            <p>Copyright © 2017-2029 . 张姗的个人网站 . Zhang Shan's Personal Website , All Rights Reserved . </p>
+        </footer>
+    </div>
+    <div class="section"></div>
+    <div class="section">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+    </div>
+    <div class="section"></div>
 </div>
 
 <!-- 引入jQuery -->
 <script src="lib/jquery/jquery.min.js"></script>
 <!-- 引入核心的bootstrap js文件  -->
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--引入fullpage插件文件-->
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/jquery-slimscroll.min.js"></script>
 <!-- 引入自己的js文件-->
 <script src="js/index.js"></script>
 </body>
