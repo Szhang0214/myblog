@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #demo {
+            position: absolute;
+            width: 100px;
+            height: 90px;
+            border-top: 10px solid #000;
+            margin-top: 20px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">去吧，皮卡丘！</button>
+<div id="demo"></div>
+<script>
+    var btn = document.getElementById("btn");
+    var demo = document.getElementById("demo");
+    var timer = null;
+    btn.onclick = function () {
+        animateAnyAttr(demo, {"top": 200, "height": 200, "left": 300}, function () {
+            animateAnyAttr(demo, {"top": 100, "height": 100, "left": 200, "opacity": 0.5, "zIndex": 3})
+        });
+    }
+    //1.封装缓动动画，让任意对象到任意位置
+    function animate(obj, target) {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            var leader = obj.offsetLeft;
+            var step = (target - leader) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            leader = leader + step;
+            obj.style.left = leader + "px";
+            if (leader === target) {
+                clearInterval(timer);
+            }
+        }, 15)
+    }
+    //2.封装缓动动画，让任意对象的任意属性到任意位置
+    function animateAttr(obj, target, attr) {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            //因为没有设置属性值时，IE浏览器获取到的值是auto，所以无法取整时直接设置为0
+            var leader = parseInt(getStyle(obj, attr)) || 0;
+            var step = (target - leader) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            leader = leader + step;
+            obj.style[attr] = leader + "px";
+            if (leader === target) {
+                clearInterval(timer);
+            }
+        }, 15)
+    }
+    //3.封装缓动动画，同时让任意对象的多个任意属性到任意位置，最后一个参数是回调函数，会在动画执行完之后执行
+    function animateAnyAttr(obj, json, fn) {//json={"top":200,"height":200,"left":300}
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            //假设这一趟所有的属性值都到达目标值
+            var flag = true;
+            for (var k in json) {//k指的是"top","height","left"
+                if (k === "opacity") {
+                    //opacity属性比较特殊，它的属性值是小数，没有单位
+                    var leader = getStyle(obj, k) * 100;
+                    var step = (json[k] * 100 - leader) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader / 100;
+                } else if (k === "zIndex") {
+                    //zIndex属性也比较特殊，没有过渡效果，直接设置即可
+                    obj.style.zIndex = json[k];
+                } else {
+                    //因为没有设置属性值时，IE浏览器获取到的值是auto，所以无法取整时直接设置为0
+                    var leader = parseInt(getStyle(obj, k)) || 0;
+                    var step = (json[k] - leader) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader + "px";
+                }
+                //单纯的进行下面的判断，一旦某一个属性值到达目标值就会清除定时器，会使其他属性值无法到达目标值。
+                /*if (leader === json[k]) {
+                 clearInterval(timer);
+                 }*/
+                //如果还有某个属性值还没有到达目标值，赶紧让flag=false
+                if (leader !== json[k]) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                clearInterval(obj.timer)
+                //避免没有传回调函数这个参数时控制台报错
+                if (fn) {
+                    fn();
+                }
+            }
+        }, 15)
+    }
+
+
+    //公用：获取任意对象的任意属性，返回值是字符串格式，还带有单位
+    function getStyle(obj, attr) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj)[attr];
+        } else {
+            return obj.currentStyle[attr];
+        }
+    }
+
+</script>
+</body>
+</html>

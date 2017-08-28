@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>干掉所有人，留下我自己</title>
+    <style>
+        .current{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<button>点我</button>
+<button>点我</button>
+<button>点我</button>
+<button>点我</button>
+<script>
+    //需求:点击任意一个按钮，使当前（current）按钮高亮，其他的不变
+    //1.给每一个按钮绑定点击事件
+    var btns=document.getElementsByTagName("button");
+    for(var i=0;i<btns.length;i++){
+        btns[i].onclick=function () {
+            //干掉所有人
+            for(var i=0;i<btns.length;i++){
+                btns[i].className="";
+            }
+            //留下我自己
+            this.className="current";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .odd {
+            background-color: red;
+        }
+
+        .even {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<ul id="box">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script>
+    var box = document.getElementById("box");
+    //获取box的子节点（节点：文档中所有内容都是节点）
+    var children = box.childNodes;
+    //children中不止包含li标签节点，还包括文本节点（此处指换行）
+    console.log(children);
+    var j=0;
+    for (var i = 0; i < children.length; i++) {
+        //判断该节点是不是标签节点（节点属性：节点类型nodeType,节点值nodeValue，节点名nodeName）
+        //标签节点的节点属性是1，文本节点的节点类型是3
+        if (children[i].nodeType === 1) {//是标签节点
+            //设置隔行变色，判断奇数偶数行
+            //此处变量用j不能用i的原因是，i进入此处不是从0，1,2,3,4...的顺序排序
+            if (j % 2 === 0) {//索引是偶数，就是奇数行
+                children[i].className = "odd";
+            } else {
+                children[i].className = "even";
+            }
+            j++;
+        }
+    }
+</script>
+</body>
+</html>

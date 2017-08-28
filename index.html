@@ -21,9 +21,21 @@
     <!--[endif]-->
 </head>
 <body>
+<!--小海豚返航-->
+<span class="rocket" id="backTop">
+    <img src="image/top.png" alt=""/>
+</span>
+<!--开机动画-->
+<div class="board" id="board">
+    <span id="closeButton"></span>
+    <div class="hd" id="headPart">
+        <img src="image/lc.png" alt=""/>
+    </div>
+</div>
 <!--导航条-->
 <div class="nav" style="z-index:-1">
-    <ul class="clearfix">
+    <span id="cloud"></span>
+    <ul id="navbar" class="clearfix">
         <li class="fl"><a href="">张姗的Blog</a></li>
         <li class="fr"><a href="">关于我</a></li>
         <li class="fr"><a href="">作品集</a></li>
@@ -121,6 +133,8 @@
 <!--引入fullpage插件文件-->
 <script src="js/jquery.fullPage.min.js"></script>
 <script src="js/jquery-slimscroll.min.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/common.js"></script>
 <!-- 引入自己的js文件-->
 <script src="js/index.js"></script>
 </body>

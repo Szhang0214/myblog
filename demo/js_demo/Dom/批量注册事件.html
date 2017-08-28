@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<script>
+    //1.找对象 批量获取input标签，获取到的是一个伪数组，里面装着所有的input元素对象
+    var inputs=document.getElementsByTagName("input");
+    //2.遍历取出每一个input元素对象
+    for(var i=0;i<inputs.length;i++){
+        var input=inputs[i];
+        //3.绑定点击事件
+        //console.log(input);
+        input.onclick=function () {
+            alert("点我点我");
+        }
+
+    }
+</script>
+</body>
+</html>

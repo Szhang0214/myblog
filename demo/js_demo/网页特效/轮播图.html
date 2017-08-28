@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        ul {
+            list-style: none
+        }
+
+        img {
+            vertical-align: top
+        }
+
+        .box {
+            width: 800px;
+            height: 500px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 2px solid #ccc;
+        }
+
+        .inner {
+            width: 800px;
+            height: 500px;
+            /*background-color: pink;*/
+            overflow: hidden;
+            position: relative;
+        }
+
+        .inner img {
+            width: 800px;
+            height: 500px;
+        }
+
+        .inner ul {
+            width: 1000%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .inner li {
+            float: left;
+        }
+
+        .square {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .square span {
+            display: inline-block;
+            width: 30px;
+            height: 25px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 25px;
+            cursor: pointer;
+        }
+
+        .square span.current {
+            background-color: orangered;
+            color: #fff;
+        }
+        #arr {
+            display: none;
+        }
+        #arr span {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 5px;
+            top: 45%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 100px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="inner">
+        <ul>
+            <li><a href="#"><img src="image/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="image/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="image/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="image/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="image/5.jpg" alt=""/></a></li>
+        </ul>
+        <div class="square">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div id="arr">
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+    </div>
+</div>
+<script>
+    //1.找人
+    var box = document.getElementById("box");
+    var inner = box.children[0];
+    var ul = inner.children[0];
+    var square = inner.children[1];
+    var spans = square.children;
+    var arr=document.getElementById("arr");
+    var right=document.getElementById("right");
+    var left=document.getElementById("left");
+    var imgs=document.getElementsByTagName("img");
+    //2.鼠标经过当前按钮，当前按钮高亮
+    for (var i = 0; i < spans.length; i++) {
+        //自定义属性，保存索引
+        spans[i].index=i;
+        spans[i].onmouseover = function () {
+
+            //干掉所有人
+            for (var i = 0; i < spans.length; i++) {
+                spans[i].className = "";
+            }
+            //留下我自己
+            this.className = "current";
+            //3.鼠标经过当前按钮，移动相应的图片
+            var target = -inner.offsetWidth *this.index;
+            animate(ul, target);
+        }
+
+    }
+    //3.鼠标经过box显示箭头，离开隐藏
+    box.onmouseover=function () {
+        //鼠标经过，显示箭头
+        arr.style.display="block";
+    }
+    box.onmouseout=function () {
+        arr.style.display="none";
+    }
+
+    //记录当前图片的索引
+    var pic=0;
+    //4.点击右箭头，切换下一张图片
+    right.onclick=function () {
+        //判断一下是不是最后一张
+        if(pic===imgs.length-1){
+            return;
+        }
+        pic++;
+        var target=-inner.offsetWidth*pic;
+        animate(ul,target);
+    }
+    left.onclick=function () {
+        if(pic===0){
+            return;
+        }
+        pic--;
+        var target=-inner.offsetWidth*pic;
+        animate(ul,target);
+    }
+
+    //封装动画函数
+    function animate(obj, target) {
+        var timer = null;
+        timer = setInterval(function () {
+            //防止重复调用，进入先清一下
+            clearInterval(timer);
+            //当前位置=当前位置+移动的长度 leader = leader + step;
+            var leader = obj.offsetLeft;
+            //判断向右走还是向左走，step>0 说明目标位置>当前位置，
+            var step = target - leader > 0 ? step : -step;
+            if (Math.abs(target - leader) >= Math.abs(step)) {//
+                leader = leader + step;
+                obj.style.left = leader + "px";
+            } else {
+                clearInterval(timer);
+                //如果当前位置距目标的距离小于要移动的距离，直接设置到终点位置
+                obj.style.left = target + "px";
+            }
+        }, 15)
+    }
+</script>
+</body>
+</html>

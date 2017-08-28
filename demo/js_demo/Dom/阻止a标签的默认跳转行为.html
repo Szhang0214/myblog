@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阻止a标签的跳转</title>
+</head>
+<body>
+//在onclick里面return false可以阻止跳转
+<a href="www.baidu.com" onclick="return testAge(15)" >想用百度搜索引擎吗，点我呀</a>
+<script>
+    function testAge(age) {
+        if(age>18){
+            alert("欢迎使用");
+        }else{
+            alert("你还太嫩了，过两年再来吧");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

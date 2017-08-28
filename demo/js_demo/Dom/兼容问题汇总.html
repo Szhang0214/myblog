@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兼容问题</title>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+<script>
+    var box = document.getElementById("box");
+    //需求：获取box内部文本，有两种方式：innerText和textContent
+    //谷歌对这两种方法都支持
+    // 新版的FF都支持，旧版的只支持textContent
+    // 新版的IE都支持，旧版的IE(6/7/8)只支持innerText
+    if(box.innerText===undefined){
+        console.log(box.textContent);
+    }else{
+        console.log(box.innerText);
+    }
+</script>
+</body>
+</html>

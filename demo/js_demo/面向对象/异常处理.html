@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var abc;
+
+    try {
+        //可能会出现bug代码放在这里
+        abc();
+    } catch (error) {//error是Error构造函数的实例
+        //对bug进行处理的代码放在这里
+        console.log(error)
+    }
+</script>
+</body>
+</html>

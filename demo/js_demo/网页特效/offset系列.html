@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            padding: 10px;
+            border: 10px solid #000;
+            margin: 40px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //offset系列都是只读的，只能获取，不能设置
+    var box=document.getElementById("box");
+    console.log(box.offsetHeight);//height+padding+border 240
+    console.log(box.offsetTop);//margin-top 40
+    console.log(box.offsetLeft);// margin-left 40
+</script>
+</body>
+</html>

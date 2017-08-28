@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>旋转木马轮播图</title>
+    <style>
+        blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+            margin: 0;
+            padding: 0
+        }
+
+        body, button, input, select, textarea {
+            font: 12px/1.5 "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+            color: #666;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        fieldset, img {
+            border: 0;
+            vertical-align: top;
+        }
+
+        a, input, button, select, textarea {
+            outline: none;
+        }
+
+        a, button {
+            cursor: pointer;
+        }
+
+        .wrap {
+            width: 1200px;
+            margin: 100px auto;
+        }
+
+        .slide {
+            height: 500px;
+            position: relative;
+        }
+
+        .slide li {
+            position: absolute;
+            left: 200px;
+            top: 0;
+        }
+
+        .slide li img {
+            width: 100%;
+        }
+
+        .arrow {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .prev, .next {
+            width: 76px;
+            height: 112px;
+            position: absolute;
+            z-index: 99;
+        }
+
+        .prev {
+            left: 0;
+            background: url(image/prev.png) no-repeat;
+        }
+
+        .next {
+            right: 0;
+            background-image: url(image/next.png);
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <div class="slide" id="slide">
+        <ul>
+            <li><a href="#"><img src="image/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="image/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="image/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="image/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="image/5.jpg" alt=""/></a></li>
+        </ul>
+        <div class="arrow" id="arrow">
+            <a href="javascript:;" class="prev" id="arrLeft"></a>
+            <a href="javascript:;" class="next" id="arrRight"></a>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload=function () {
+        var wrap = document.getElementById("wrap");
+        var arrow = document.getElementById("arrow");
+        var arrLeft = document.getElementById("arrLeft");
+        var arrRight = document.getElementById("arrRight");
+        var lis = document.getElementsByTagName("li");
+        var config = [
+            {
+                "width": 400,
+                "top": 20,
+                "left": 50,
+                "opacity": 0.2,
+                "zIndex": 2
+            },//0
+            {
+                "width": 600,
+                "top": 70,
+                "left": 0,
+                "opacity": 0.8,
+                "zIndex": 3
+            },//1
+            {
+                "width": 800,
+                "top": 100,
+                "left": 200,
+                "opacity": 1,
+                "zIndex": 4
+            },//2
+            {
+                width: 600,
+                top: 70,
+                left: 600,
+                opacity: 0.8,
+                zIndex: 3
+            },//3
+            {
+                "width": 400,
+                "top": 20,
+                "left": 750,
+                "opacity": 0.2,
+                "zIndex": 2
+            }//4
+        ];//其实就是一个配置单 规定了每张图片的大小位置层级透明度
+
+        //1.鼠标经过旋转木马，渐渐地显示左右箭头
+        wrap.onmouseover = function () {
+            animateAnyAttr(arrow, {"opacity": 1});
+        }
+        //2.鼠标离开旋转木马，渐渐地隐藏箭头
+        wrap.onmouseout = function () {
+            animateAnyAttr(arrow, {"opacity": 0});
+        }
+        //3.根据配置单分配每一个li的位置
+        var flag=true;
+        function assion() {
+            for (var i = 0; i < lis.length; i++) {
+                //数组config中的每一项config[i]就是一个json对象
+                animateAnyAttr(lis[i], config[i],function () {
+                    flag=true;
+                });
+            }
+        }
+        assion();
+        //4.点击右箭头，让第一张图片切换到最后一张
+        arrRight.onclick=function () {
+            flag=false;
+            config.push(config.shift());
+            assion();
+        }
+        arrLeft.onclick=function () {
+            config.unshift(config.pop());
+            assion();
+        }
+
+    }
+</script>
+<!--引入自己封装的缓动框架-->
+<script src="../common.js"></script>
+</body>
+</html>

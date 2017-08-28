@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        fieldset, img, input, button {
+            border: none;
+            padding: 0;
+            margin: 0;
+            outline-style: none;
+        }
+
+        ul, ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 405px;
+            margin: 200px auto;
+            position: relative;
+        }
+
+        #txt {
+            float: left;
+            width: 300px;
+            height: 32px;
+            padding-left: 4px;
+            border: 1px solid #b6b6b6;
+            border-right: 0;
+        }
+
+        #btn {
+            float: left;
+            width: 100px;
+            height: 34px;
+            font: 400 14px/34px "microsoft yahei";
+            color: white;
+            background: #3385ff;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            background: #317ef3;
+        }
+
+        #tip {
+            width: 303px;
+            border: 1px solid #ccc;
+            padding: 0px;
+            position: absolute;
+            top: 34px;
+        }
+
+        #tip ul li {
+            padding-left: 5px;
+        }
+
+        #tip ul li:hover {
+            background-color: #CCC;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text" name="" id="txt">
+    <input type="button" value="百度" id="btn">
+</div>
+<script>
+    //模拟后台数据
+    arr=["a","ab","abc","abcd","abcde","abcdef"];
+    //需求：用户在输入框内输入内容，输入框下面会提示相关的内容
+    var box=document.getElementById("box")
+    var txt=document.getElementById("txt")
+    var btn=document.getElementById("btn")
+    //1.给文本框注册键盘弹起事件
+    txt.onkeyup=function () {
+        //2.获取用户输入的内容
+        var val=txt.value;
+        //创建新的数组，把符合要求的数据放到新数组里
+        var newArr=[];
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].indexOf(val)===0){
+                newArr.push(arr[i]);
+            }
+        }
+        //判断页面上是否已经有了toolTip,有了就移除，说明用户之前输入了一些内容，现在接着又输入一些内容，数据要重新遍历从头执行
+        var toolTip=document.getElementById("tip");
+        if(toolTip){
+            box.removeChild(toolTip);
+        }
+        //如果没有匹配的数据，后面就不用创建提示框了
+        if(newArr.length===0){
+            return;
+        }
+        //如果是空字符串，后面也不用创建了
+        if(val===""){
+            return;
+        }
+        //3.创建提示框 toolTip
+        var toolTip=document.createElement("div");
+        toolTip.id="tip";
+        box.appendChild(toolTip);
+        var ul=document.createElement("ul");
+        toolTip.appendChild(ul);
+        //4.根据数据创建li
+        for(var j=0;j<newArr.length;j++){
+            var li=document.createElement("li");
+            ul.appendChild(li);
+            //5.设置每个li的innerText
+            li.innerText=newArr[j];
+        }
+    }
+</script>
+</body>
+</html>

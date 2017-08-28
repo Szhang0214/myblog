@@ -1,12 +1,43 @@
 body{
     font-family: "microsoft yahei";
+    overflow: auto;
+}
+.rocket {
+    position: fixed;
+    right: 100px;
+    bottom: 200px;
+    display: none;
+    z-index: 2;
+}
+.rocket img{
+    width: 90px;
+    height: 100px;
 }
 /*fullpage全屏滑动设置*/
 #fullpage .section:not(first-child){
     background: url("../image/section4.jpg");
     background-size: cover;
 }
-
+/*开机动画*/
+.board {
+    width: 322px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    /*overflow: hidden;*/
+}
+.board img{
+    width: 100%;
+}
+.board span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
 /*第一屏开始 全屏video背景*/
 video{
     height: 800px;
@@ -221,6 +252,19 @@ footer{
     height: 70px;
     line-height: 70px;
     background-color: rgba(0,0,0,0.5);
+}
+.nav span{
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    width: 150px;
+    height: 140px;
+    background: url("../image/jy.png") no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+.navbar{
+    position: relative;
 }
 .nav li{
     margin:0 35px;

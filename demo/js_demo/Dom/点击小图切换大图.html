@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝产品展示</title>
+    <style>
+        ul li{
+            list-style: none;
+            float: left;
+            margin: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<img src="image/Kitty/01big.jpg" id="bigPic" alt="">
+<ul>
+    <li><img src="image/Kitty/01.jpg" onclick=togglePic(1); alt=""></li>
+    <li><img src="image/Kitty/02.jpg" onclick=togglePic(2); alt=""></li>
+    <li><img src="image/Kitty/03.jpg" onclick=togglePic(3); alt=""></li>
+    <li><img src="image/Kitty/04.jpg" onclick=togglePic(4); alt=""></li>
+</ul>
+<script>
+    //1.找对象
+    var bigPic=document.getElementById("bigPic");
+    function togglePic(num) {
+        //2.设置属性
+        bigPic.src="image/Kitty/0"+num+"big.jpg";
+    }
+</script>
+</body>
+</html>

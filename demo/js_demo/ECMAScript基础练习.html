@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1.交换两个变量的值
+    /*var a=10,b=20,temp;
+     temp=a;
+     a=b;
+     b=temp;
+     console.log(a);
+     console.log(b);*/
+    //2.不使用第三个变量交换两个数值类型变量的值
+    /*var a=10,b=20;
+     a=a+b;
+     b=a-b;
+     a=a-b;
+     console.log(a);
+     console.log(b);*/
+    //3.一元运算练习（a++先运算再自加，++a先自加再运算）
+    //        3            2     3               5
+    // var a = 1; var b = ++a + ++a; console.log(b);//5
+    //        3            1     3                4
+    // var a = 1; var b = a++ + ++a; console.log(b);//4
+    //        3            1      2               3
+    // var a = 1; var b = a++ + a++; console.log(b);//3
+    //        3            2      2               4
+    // var a = 1; var b = ++a + a++; console.log(b);//4
+
+    //4.选择语句if练习
+
+    //4.1素质教育（把分数变成ABCDE）
+    /*var score = 90;
+     if (score > 90) {
+     console.log("A");
+     } else if (score > 80) {
+     console.log("B");
+     } else if (score > 70) {
+     console.log("C");
+     } else if (score > 60) {
+     console.log("D");
+     } else {
+     console.log("E");
+     }*/
+    //4.2今天星期几  var week= new Date().getDay(); 周末是0
+    /*var week = new Date().getDay();
+
+     if (week === 0) {
+     console.log("周日");
+     } else if (week === 1) {
+     console.log("周一");
+     } else if (week === 2) {
+     console.log("周二");
+     } else if (week === 3) {
+     console.log("周三");
+     } else if (week === 4) {
+     console.log("周四");
+     } else if (week === 5) {
+     console.log("周五");
+     } else if (week === 6) {
+     console.log("周六");
+     }*/
+
+    //4.3从两个数中找最大值
+
+    /*var a=10,b=20,max;
+     if(a>b){
+     max=a;
+     }else {
+     max=b;
+     }
+     console.log(max);*/
+
+    //5.三元运算练习
+    //5.1是否年满18岁
+    /*var age = 20;
+     console.log(age > 18 ? true : false);*/
+    //5.2从两个数中找最大值
+    /*var a = 10, b = 20;
+     console.log(a > b ? a : b);*/
+    //5.3从三个数中找最大值
+    /*var a = 10, b = 20, c = 30;
+     max = (a > b ? a : b) > c ? (a > b ? a : b) : c;
+     console.log(max);*/
+
+    //6.选择语句switch练习
+    //6.1今天星期几
+    /*var week = new Date().getDay();
+     switch (week) {
+     case 0:
+     console.log("周日");
+     break;
+     case 1:
+     console.log("周一");
+     break;
+     case 2:
+     console.log("周二");
+     break;
+     case 3:
+     console.log("周三");
+     break;
+     case 4:
+     console.log("周四");
+     break;
+     case 5:
+     console.log("周五");
+     break;
+     case 6:
+     console.log("周六");
+     break;
+     }*/
+
+    //6.2素质教育（把分数变成ABCDE） 千万不要写100个case哟
+    /*var score=100;
+     switch (true){
+     case score>90:
+     console.log("A");
+     break;
+     case score>80:
+     console.log("B");
+     break;
+     case score>70:
+     console.log("C");
+     break;
+     case score>60:
+     console.log("D");
+     break;
+     default:
+     console.log("E");
+     }*/
+
+    //7.循环语句while和do...while练习
+
+    //7.1求1到100之间整数的和（while）
+    /*var i = 1, sum = 0;
+     while (i <= 100) {
+     sum += i;
+     i++
+     }
+     console.log(sum);*/
+    //7.2求1到100之间整数的和（dowhile）
+    /*var i = 1, sum = 0;
+     do {
+     sum += i;
+     i++;
+     } while (i <= 100);
+     console.log(sum);*/
+    //7.3验证帐号和密码，如果输入错误则提示重新输入   prompt提示框
+    /*do {
+     var userName = prompt("请输入账号");
+     var passWord = prompt("请输入密码");
+     } while (userName !== "admin" || passWord !== "888888");*/
+
+    //8.循环语句for练习
+    //8.1打印输出5次100
+    /*for (var i = 1; i <= 5; i++) {
+     console.log(100);
+     }*/
+    //8.2打印输出1-100这些数字（包括100）
+    /*for (var i = 1; i <= 100; i++) {
+     console.log(i);
+     }*/
+    //8.3打印输出1-100的和(sum)、平均值
+    /*var sum = 0;
+     for (var i = 1; i <= 100; i++) {
+     sum += i;
+     }
+     console.log(sum);
+     console.log(sum / --i);*/
+    //8.4打印输出1到100之间的数的乘积(pro)（包括100）
+    /*var pro = 1;
+     for (var i = 1; i <= 100; i++) {
+     pro *= i;
+     }
+     console.log(pro);*/
+    //8.5计算1到100之间所有不能被3整除的整数的和
+    /*var sum = 0;
+     for (var i = 1; i <= 100; i++) {
+     if (i % 3 !== 0) {
+     sum += i;
+     }
+     }
+     console.log(sum);*/
+    //8.6计算1到1000之间所有不能被7整除的整数的和
+    /*var sum = 0;
+     for (var i = 1; i <= 1000; i++) {
+     if (i % 7 !== 0) {
+     sum += i;
+     }
+     }
+     console.log(sum);*/
+    //8.7同时将1到100之间所有奇数odd和和偶数even和分别求出
+    /*var sumOdd = 0, sumEven = 0;
+     for (var i = 1; i <= 100; i++) {
+     if (i % 2 === 0) {
+     sumEven += i;
+     } else {
+     sumOdd += i;
+     }
+     }
+     console.log(sumEven);
+     console.log(sumOdd);*/
+    //8.8打印正方形
+    /*for (var i = 1; i <= 10; i++) {//外层遍历控制多少排
+     for (var j = 1; j <= 10; j++) {//内层遍历控制每排多少颗星星
+     document.write("☆");
+     }
+     document.write("<br>");
+     }*/
+    //8.9打印直角三角形
+    /*for (var i = 1; i <= 10; i++) {//外层遍历控制多少排
+     for (var j = 1; j <= i; j++) {//内层遍历控制每排多少颗星星 每排的星星数量和排数相等
+     document.write("☆");
+     }
+     document.write("<br>");
+     }*/
+    //8.10打印 9 * 9 乘法表
+    /*for (var i = 1; i < 10; i++) {
+     for (var j = 1; j <= i; j++) {
+     document.write(j + "*" + i + "=" + j * i + " ");
+     }
+     document.write("<br>");
+     }*/
+    //8.11本金(money)10000元存入银行，年利率(rate)是千分之三，每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少？
+    /*var money = 10000, rate = 0.003;
+     for (var i = 1; i <= 5; i++) {
+     money += money * rate;
+     }
+     console.log(money);*/
+    //8.12斐波那契数列（兔子数列）有个人想知道一年之内一对兔子能繁殖多少对。于是就筑了一道围墙把一对兔子关在里面。已知一对兔子每个月可以生一对小兔子，而一对兔子从出生后第3个月起每月生一对小兔子。假如一年内没有发生死亡现象，那么，一对兔子一年内（12个月）能繁殖成多少对？
+    //兔子数列规律为：1，1，2，3，5，8，13，21
+
+    //规律：前两项是固定的，后面每项的值等于前两项的和(下面是两种方法)
+    /*var n1=1,n2=1,n3;
+     for(var i=3;i<=12;i++){//从第3个月才开始生兔子，所以i的初始值为3
+     n3=n1+n2;
+     //前两项的值重新赋值
+     n1=n2;
+     n2=n3;
+     }
+     console.log(n3);*/
+
+    /*var n1=1,n2=1,temp;
+     for(var i=3;i<=12;i++){
+     //先把n1的值存放到temp
+     temp=n1;
+     //然后求前两项的和存到n1
+     n1=n1+n2;
+     //最后把temp放到n2里
+     n2=temp;
+     }
+     console.log(n1);*/
+
+    //9.break和continue关键字练习
+    //9.1求1到100之间不能被7整除的整数的和（continue）
+    /*var sum = 0;
+     for (var i = 1; i <= 100; i++) {
+     if (i % 7 === 0) {
+     continue;
+     }
+     sum += i;
+     }
+     console.log(sum);*/
+    //9.2求200-300之间所有的奇数的和(continue)
+    /*var sum = 0;
+     for (var i = 200; i <= 300; i++) {
+     if (i % 2 === 0) {
+     continue;
+     }
+     sum += i;
+     }
+     console.log(sum);*/
+    //9.3求200-300之间第一个能被7整除的数(break)
+    /*for (var i = 200; i <= 300; i++) {
+     if (i % 7 === 0) {
+     console.log(i);
+     break;
+     }
+     }*/
+    //9.4求1到100之间所有不能被3整除的整数的第一个大于2000的和(continue和break)
+    /*var sum = 0;
+     for (var i = 1; i <= 100; i++) {
+     if (i % 3 === 0) {
+     continue;
+     }
+     sum += i;
+     if (sum >= 2000) {
+     console.log(sum);
+     break;
+     }
+     }*/
+    //9.5循环输出询问"你爱我吗？选择y/n"若输入为n则一直询问 若输入为y则打印"我也是"并跳出（break）
+    /*while (true) {
+     var msg = prompt("你爱我吗？选择y/n");
+     if (msg == "y") {
+     console.log("我也是");
+     break;
+     }
+     }*/
+
+    //10.函数function练习
+    //10.1求x-y之间所有数的和
+    /*function getSum(x, y) {
+     var sum = 0;
+     for (var i = x; i <= y; i++) {
+     sum += i;
+     }
+     return sum;
+     }
+     console.log(getSum(1, 5));*/
+    //10.2求x-y之间所有数的乘积
+    /*function getPro(x, y) {
+     var pro = 1;
+     for (var i = x; i <= y; i++) {
+     pro *= i;
+     }
+     return pro;
+     }
+     console.log(getPro(1, 3));*/
+    //10.3求任意半径(r)的圆的面积(area)
+    /*function getArea(r) {
+     return 3.14 * r * r;
+     }
+     console.log(getArea(2));*/
+    //10.4求任意半径(r)的圆的周长
+    /*function getCir(r) {
+     return 2 * 3.14 * r;
+     }
+     console.log(getCir(1));*/
+    //10.5求任意2个数中的最大值
+    /*function getMax(a, b) {
+     return a > b ? a : b;
+     }
+     console.log(getMax(1, 2));*/
+    //10.6求任意3个数中的最大值
+    /*function getMax3(a, b, c) {
+     return (a > b ? a : b) > c ? (a > b ? a : b) : c;
+     }
+     console.log(getMax3(1, 2, 3));*/
+    //10.7求任意数组中的最大值
+    /*function getArrMax(arr) {
+     var max = arr[0];
+     for (var i = 0; i <= arr.length-1; i++) {
+     if (max < arr[i]) {
+     max = arr[i];
+     }
+     }
+     return max;
+     }
+     var arr = [1, 8, 3, 4, 5]
+     console.log(getArrMax(arr));*/
+    //10.8求任意数组中的最小值
+    /*function getArrMin(arr) {
+     var min = arr[0];
+     for (var i = 0; i < =arr.length-1; i++) {
+     if (min > arr[i]) {
+     min = arr[i];
+     }
+     }
+     return min;
+     }
+     var arr = [1, 8, 3, 4, 5]
+     console.log(getArrMin(arr));*/
+    //10.9翻转任意数组，返回一个新的数组
+    /*function reverseArr(arr) {
+     var newArr = [];
+     for (var i = arr.length - 1; i >= 0; i--) {
+     newArr[newArr.length] = arr[i];
+     }
+     return newArr;
+     }
+     var arr = [1, 2, 3, 4, 5]
+     console.log(reverseArr(arr));*/
+    //10.10对任意数组从小到大排序(冒泡排序)
+    /*function sortArr(arr) {
+     //外层控制趟数 arr.length个元素 arr.length-1趟
+     for (var j = 0; j < =arr.length - 1; j++) {
+     //内层控制比较次数 arr.length个元素 arr.length-1次
+     for (var i = 0; i < =arr.length - 1; i++) {
+     if (arr[i] > arr[i + 1]) {
+     var temp = arr[i];
+     arr[i] = arr[i + 1];
+     arr[i + 1] = temp;
+     }
+     }
+     }
+     return arr;
+     }
+     var arr = [2, 4, 1, 3, 5]
+     console.log(sortArr(arr));*/
+    //10.11优化冒泡排序
+    /*function sortArr(arr) {
+     //假设这个数组一开始就是从小到大排好的
+     var flag = true;
+     for (var j = 0; j < =arr.length - 1; j++) {
+     //arr.length - 1 - i 每遍历一次，可以排好一对，下次遍历就可以减少次数
+     for (var i = 0; i < =arr.length - 1 - i; i++) {
+     if (arr[i] > arr[i + 1]) {
+     //如果没排好，赶紧让flag=false
+     flag = false;
+     var temp = arr[i];
+     arr[i] = arr[i + 1];
+     arr[i + 1] = temp;
+     }
+     }
+     //当条件判断语句不成立时说明排好了，赶紧让flag=true,此时结束循环
+     if (flag) {
+     break;
+     }
+     }
+     return arr;
+     }
+     var arr = [2, 4, 1, 3, 5]
+     console.log(sortArr(arr));*/
+    //10.11从前有座山，山里有座庙，庙里有个老和尚在给小和尚讲故事，故事是：234遍重复（递归）
+    /*var i = 0;
+    function tellStory() {
+        console.log("从前有座山，山里有座庙，庙里有个老和尚在给小和尚讲故事，故事是：");
+        i++;
+        if (i < 5) {
+            tellStory();
+        }
+    }
+    tellStory();*/
+    //10.12判断一个数是否是质数(质数是只能被1和自身整除的数)
+    /*function isZs(num) {
+        //假设这个数是质数
+        var isZs=true;
+        for(var i=2;i<num;i++){
+            if(num%i===0){
+                isZs=false;
+            }
+        }
+        return isZs;
+    }
+    console.log(isZs(10));
+    console.log(isZs(11));*/
+    //10.13求n以内的质数
+    /*function getZs(n) {
+        for(var i=2;i<=n;i++){
+            if(isZs(i)){
+                console.log(i);
+            }
+        }
+    }
+    getZs(10);
+    //10.14求n的阶乘 例：5! 5*4*3*2*1
+    function getJc(n) {
+        var jc=1;
+        for(var i=1;i<=n;i++){
+            jc*=i;
+        }
+        return jc;
+    }
+    console.log(getJc(5));*/
+    //10.15求1!+2!+3!+...+n!
+    /*function getJcSum(n) {
+        var sum=0;
+        for(var i=1;i<=n;i++){
+            sum+=getJc(i);
+        }
+        return sum;
+    }
+    console.log(getJcSum(4));*/
+    //10.16求斐波那契数列（Fibonacci）中的第n项 1 1 2 3 5 8 13 21 ...在控制台输出 斐波那契竖列的前12项
+    /*function getFib(n) {
+        if(n===1||n===2){
+            return 1;
+        }
+        var n1=1,n2=1,n3;
+        for(var i=3;i<=n;i++){
+            n3=n1+n2;
+            n1=n2;
+            n2=n3;
+        }
+        return n3;
+    }
+    console.log(getFib(12));//144*/
+    //10.17判断某年是否是闰年(四年一闰,百年不闰,四百年再闰)
+    /*function isLeapYear(year) {
+        if(year%4==0&&year%100!==0||year%400==0){
+            isLeapYear=true;
+        }
+        return false;
+    }
+    console.log(isLeapYear(2017));//false*/
+
+    //10.18输入某年某月某日，判断这一天是这一年的第几天,今天到2016年12月31日还有多少天
+    /*function getDays(year, month, day) {
+        var days = day;//把这个月过去的天数加上
+        //把过去的月份 的完整天数 加上
+        var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        //month=3 for(var i=0;i<=1;i++)
+        //数组的索引是从0开始的 所以-1 当月还没有过完所以当月的完整天数不加 所以-2
+        for (var i = 0; i <= month - 2; i++) {
+            //days = days + months[i];
+            days += months[i];
+        }
+        //如果是闰年 并且 是二月份之后的月份 要多加一天
+        if (isLeapYear(year) && month > 2) {
+            days++;
+        }
+        return days;
+    }
+    console.log(getDays(2017, 7, 19));
+    console.log(getDays(2017, 12, 31) - getDays(2017, 7, 19));*/
+    //11.算法封装，输入整数数组，返回一个结果，
+    /*var obj = {
+     getSum: function (arr) {
+     var sum = 0;
+     for (var i = 0; i < arr.length; i++) {
+     sum += arr[i];
+     }
+     return sum;
+     },
+     getPro: function (arr) {
+     var pro = 1;
+     for (var i = 0; i < arr.length; i++) {
+     pro *= arr[i];
+     }
+     return pro;
+     }
+
+     };
+     var arr = [2, 3, 4];
+     console.log(obj.getSum(arr));
+     console.log(obj.getPro(arr));*/
+    //12.构造函数封装对象
+    /*function Math(arr) {
+     var arr=arr;
+     this.obj=arr;
+     this.getSum = function () {
+     var sum = 0;
+     for (var i = 0; i < arr.length; i++) {
+     sum += arr[i];
+     }
+     return sum;
+     },
+     this.getPro = function () {
+     var pro = 1;
+     for (var i = 0; i < arr.length; i++) {
+     pro *= arr[i];
+     }
+     return pro;
+     }
+     }
+     a = new Math([3, 6, 2]);
+     console.log(a.obj);
+     console.log(a.getPro());
+     console.log(a.getSum());*/
+    //13.批量创建对象
+    //13.1工厂模式创建学生对象
+    /*function creatStudent(name,age) {
+        var student=new Object();
+        student.name=name;
+        student.age=age;
+        student.sayHi=function () {
+            console.log("大家好");
+        }
+        return student;
+    }
+    console.log(creatStudent("zs", 18));
+    console.log(creatStudent("ls", 20));*/
+    //13.2构造函数创建学生对象
+    //和工厂模式的不同之处：首先，函数的名字一般是起一个名词，并且首字母大写；其次，不用手动创建对象，this会指向当前函数所属对象；另外，不用手动return了，new关键字会让this的指向改变，并让其成为当前函数的返回值
+    /*function Student(name,age) {
+        this.name=name;
+        this.age=age;
+        this.sayHi=function () {
+            console.log("大家好");
+        }
+    }
+
+    var s1=new Student("zs",18);
+    console.log(s1);
+    console.log(s1);*/
+    //14.数组的多种方法操作练习
+    //14.1将一个字符串数组输出为用|分割的字符串，如 ["刘备", "张飞", "关羽"] 变为 "刘备|张飞|关羽"。（两种方式）
+    /*var arr=["刘备", "张飞", "关羽"];
+    //第一种，用join()方法
+    console.log(arr.join("|"));
+    //第二种，遍历数组，拼接字符串
+    var str=arr[0];
+    for(var i=1;i<arr.length;i++){
+        str=str+"|"+arr[i];
+    }
+    console.log(str);*/
+    //14.2将字符串数组的顺序进行反转。["a","b","c","d"] 变为["d","c","b","a"]。（三种方式）
+    /*var arr=["a","b","c","d"];
+    //第一种：调用reverse()方法
+    console.log(arr.reverse());
+    //第二种：倒序遍历
+    var newArr=[];
+    for(var i=arr.length-1;i>=0;i--){
+        newArr[newArr.length]=arr[i];
+    }
+    console.log(newArr);
+    //第三种，两两交换位置
+    //0 和 arr.length-1-0 项交换
+    //1 和 arr.length-1-1 项交换
+    //i 和 arr.length-1-i 项交换
+    for(var i=0;i<arr.length/2;i++){
+        var temp=arr[i];
+        arr[i]=arr[arr.length-1-i];
+        arr[arr.length-1-i]=temp;
+    }
+    console.log(arr);*/
+    //14.3工资的数组[1500,1200,2000,2100,1800]把工资大于等于2000的删除
+    //filter()方法的参数是callback，被调用时传入三个参数：元素的值，元素的索引，被遍历的数组，返回true表示保留该元素（通过测试），false则不保留。
+    /*var arr=[1500,1200,2000,2100,1800];
+    var newArr=arr.filter(function (ele, index, arr) {
+        if(ele>=2000){
+            return false;
+        }else {
+            return true;
+        }
+    })
+    console.log(newArr);*/
+    //14.4 ["c", "a", "z", "a", "x", "a"]找到数组中每一个a出现的位置
+    //indexOf()方法中，第一个参数是要找的元素，第二个参数是哪个位置开始找的索引,包括当前索引，找到立马返回，返回值为所找元素在数组中的位置，即索引。
+    /*var arr=["c", "a", "z", "a", "x", "a"];
+    var index = -1;
+    do{
+        index=arr.indexOf("a",index+1);
+        if(index!==-1){
+            console.log(index);
+        }
+    }while(index!==-1);*/
+    //14.5从数组中截取4和6,不影响原数组；从原数组中删除4和6并将其返回
+    //slice() 方法返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。2个参数是要截取的元素的位置[start,end)，即索引。 原数组不会被修改。
+    /*var arr = [4, 6, 7, 8, 3, 46, 8];
+    console.log(arr.slice(0, 2));*/
+    //splice()方法删除现有元素和/或添加新元素来更改一个数组的内容。3个参数：1.开始位置 2.元素个数 3.要添加的元素。会修改原数组。
+    /*var newArr=arr.splice(2);
+    console.log(newArr);*/
+    //14.6对一个数组进行循环遍历
+    //forEach() 方法对数组的每个元素执行一次提供的函数。参数是callback
+    /*var arr = [1, 2, 3, 4, 5];
+    arr.forEach(function (ele, index, arr) {
+        console.log(ele);
+        console.log(index);
+        console.log(arr);
+    })*/
+
+</script>
+</body>
+</html>

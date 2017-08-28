@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            position: absolute;
+            width: 100px;
+            height: 90px;
+            background-color: yellow;
+            border-top: 10px solid #000;
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+<button id="btn">去吧，皮卡丘！</button>
+<div id="box"></div>
+<script>
+    var btn=document.getElementById("btn"),
+        box=document.getElementById("box"),
+        timer=null;
+    btn.onclick=function () {
+        clearInterval(timer);
+        timer=setInterval(function () {
+            var target=400,
+                leader=box.offsetLeft,
+                step=10;
+            if(leader<=target){
+                leader=leader+step;
+                box.style.left=leader+"px";
+            }else {
+                clearInterval(timer);
+            }
+        },15)
+    }
+</script>
+</body>
+</html>

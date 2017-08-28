@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝产品展示</title>
+    <style>
+        ul li{
+            list-style: none;
+            float: left;
+            margin: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<img src="image/Kitty/01big.jpg" id="bigPic" alt="">
+<ul id="box">
+    <li><img src="image/Kitty/01.jpg" alt="1"></li>
+    <li><img src="image/Kitty/02.jpg" alt="2"></li>
+    <li><img src="image/Kitty/03.jpg" alt="3"></li>
+    <li><img src="image/Kitty/04.jpg" alt="4"></li>
+</ul>
+<script>
+    //1.找对象
+    var box=document.getElementById("box");
+    var imgs=box.getElementsByTagName("img");
+    //2.因为我们得到是一个伪数组，所以要遍历取出每一个元素对象
+    for(var i=0;i<imgs.length;i++){
+        var img=imgs[i];
+        //3.得到元素对象了，绑定事件
+        img.onclick=function () {
+            //此处调用下面的函数，实参不能用i，因为点击事件绑定了，但是没有执行，等点击的时候i已经循环结束，变成5了
+            //this指向当前函数所属对象，也就是每一个img元素对象，每个img元素对象都有alt属性，保存了数字1,2,3，4
+            togglePic(this.alt);
+        }
+    }
+    function togglePic(num) {
+        bigPic.src="image/Kitty/0"+num+"big.jpg";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url("image/Faceu/1.jpg");
+            background-size: cover;
+        }
+        #mask{
+            background-color: rgba(255,255,255,.5);
+            height: 200px;
+            text-align: center;
+        }
+        #mask img{
+            width: 200px;
+            margin-top: 35px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="mask">
+    <img src="image/Faceu/1.jpg" alt="">
+    <img src="image/Faceu/2.jpg" alt="">
+    <img src="image/Faceu/3.jpg" alt="">
+    <img src="image/Faceu/4.jpg" alt="">
+    <img src="image/Faceu/5.jpg" alt="">
+</div>
+<script>
+    //点击小图切换背景
+    var imgs=document.getElementById("mask").children;
+    for(var i=0;i<imgs.length;i++){
+        imgs[i].onclick=function () {
+            document.body.style.backgroundImage="url("+this.src+")";
+        }
+    }
+</script>
+</body>
+</html>

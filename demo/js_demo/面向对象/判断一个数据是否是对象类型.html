@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[];
+    var arry={};
+    var a=null;
+    var fn=function () {
+
+    }
+    /**
+     * 封装一个函数，判断数据是否是对象类型
+     */
+    function isObject(data) {
+        if (typeof data === "object" && data != null) {
+            return true;
+        }
+        if (typeof data === "function") {
+            return true;
+        }
+        return false;
+    }
+    console.log(isObject(arr));
+    console.log(isObject(arry));
+    console.log(isObject(a));
+    console.log(isObject(fn));
+</script>
+</body>
+</html>

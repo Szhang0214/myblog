@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: "Helvetica", "Arial", serif;
+            color: #333;
+            background-color: #ccc;
+            margin: 1em 10%;
+        }
+
+        h1 {
+            color: #333;
+            background-color: transparent;
+        }
+
+        a {
+            color: #c60;
+            background-color: transparent;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            float: left;
+            padding: 1em;
+            list-style: none;
+        }
+
+        #box {
+
+            list-style: none;
+        }
+
+        #box li {
+            margin: 0px 20px 20px 0px;
+            padding: 0px;
+            display: inline;
+        }
+
+        #box li a img {
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    Faceu纪念相册
+</h2>
+<ul id="box">
+    <li>
+        <a href="image/Faceu/1.jpg" title="美女A">
+            <img src="image/Faceu/1-small.jpg" width="100" alt="美女1"/>
+        </a>
+    </li>
+    <li>
+        <a href="image/Faceu/2.jpg" title="美女B">
+            <img src="image/Faceu/2-small.jpg" width="100" alt="美女2"/>
+        </a>
+    </li>
+    <li>
+        <a href="image/Faceu/3.jpg" title="美女C">
+            <img src="image/Faceu/3-small.jpg" width="100" alt="美女3"/>
+        </a>
+    </li>
+    <li>
+        <a href="image/Faceu/4.jpg" title="美女D">
+            <img src="image/Faceu/4-small.jpg" width="100" alt="美女4"/>
+        </a>
+    </li>
+    <li>
+        <a href="image/Faceu/5.jpg" title="美女D">
+            <img src="image/Faceu/5-small.jpg" width="100" alt="美女4"/>
+        </a>
+    </li>
+</ul>
+<div style="clear:both"></div>
+<img id="image" src="image/Faceu/placeholder.png" alt="" width="800px"/>
+<p id="des">选择一个图片</p>
+<script src="../common.js"></script>
+<script>
+    //需求：点击小图切换大图，并阻止跳转
+    //1.找对象，找到box里的每一个a元素对象
+    var box=document.getElementById("box");
+    var links=box.getElementsByTagName("a");
+    var bigImg=document.getElementById("image");
+    var des=document.getElementById("des");
+    //2.添加点击事件
+    for(var i=0;i<links.length;i++){
+        var link=links[i];
+        link.onclick=function () {
+            //切换大图
+            bigImg.src=this.href;
+            //切换下面的文字
+            //des.innerHTML=this.title;
+            setInnerText(des,this.title);
+            //阻止跳转
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
